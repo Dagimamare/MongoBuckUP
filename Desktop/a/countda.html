@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question 8</title>
+
+</head>
+
+<body>
+    <h1><b>Meditation Countdown</b></h1>
+    <input type="text" id="inputSecond"><br> <br>
+    <div type="text" id="principal"> </div>
+
+
+    <button type="button" onclick="main()">Start</button>
+    <button type="button" id ="stopIt">stop</button>
+    <script>
+
+    function main (){
+     let count= document.getElementById("inputSecond").value
+      let time=setInterval(calcu,1000);
+    
+    function calcu(){
+       
+        if(count === 0) {
+            stop()//clearInterval(time);
+        }
+       else{
+            document.getElementById("principal").innerHTML= count--;
+       }
+       
+        }
+        let stopIt = document.getElementById("stopIt")
+        stopIt.addEventListener("click",stop)
+        function stop(){
+          clearInterval(time);
+          document.getElementById("principal").innerHTML="0:00"
+    }
+    
+      }
+    </script>
+</body>
+
+</html>
